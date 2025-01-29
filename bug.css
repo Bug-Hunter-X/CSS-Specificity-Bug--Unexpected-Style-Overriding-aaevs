@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+#myElement {
+  color: blue;
+}
+
+.myElement {
+  color: red;
+}
+
+#myElement.myElement {
+  color: green; /* This rule is unexpectedly overridden */
+}
+```
+
+In this example, you might expect the element with both the `id` and the `class` to have a `green` color. However, the rule with `#myElement` will override the rule with `#myElement.myElement` in some browsers because of the specificity rules.  The ID selector (`#myElement`) is more specific than the combined selector (`#myElement.myElement`), which can lead to unexpected behavior.
